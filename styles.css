@@ -1,0 +1,109 @@
+
+:root{
+  --bg-color1: #f8f8f8;
+  --bg-color2: #000008;
+}
+
+*{
+padding:0;
+margin:0;
+}
+ 
+body{ 
+  background-color: var(--bg-color1);
+  color: var(--bg-color2);
+}
+
+#navbar{
+    position: sticky;
+    top:0;
+    height:10vh;
+    display: flex;
+    width: 100vw;
+    flex-direction: row-reverse; 
+}
+
+nav li{
+    display:inline-block;
+    font-size:2rem;
+    margin: 1rem 2rem;
+    text-align: right;
+}
+
+li a{
+    text-decoration: none;
+    margin: 2rem auto;
+}
+
+header{
+
+    position:absolute; 
+    top: 65vh;
+    left:100px
+}
+
+h1{
+   
+  font-size: 5rem; 
+}
+
+.title{
+    font-size: 2.5rem;
+    font-style: italic;
+
+}
+
+section{
+    padding: 2rem;
+}
+
+h2{
+    font-size: 3rem; 
+}
+#welcome-section{
+    height:80vh;
+    background: linear-gradient(90deg, var(--bg-color2), var(--bg-color1));
+    padding:1rem 2rem;
+    color: var(--bg-color1);
+}
+
+#projects{
+    height:auto;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    background-color: #fff9f9;
+    padding: 5px;
+  }
+
+.project-grid{
+    height: 40vh;
+    width:100%;
+    border: 3px solid black;
+    margin: 1rem auto;
+    border-radius: 15px;
+}
+
+footer{
+    height: 10vh;
+    background-color: #f9f9f9;
+    border: 2px solid black;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+.container{
+    display:block;
+}
+
+   h1{
+font-size: 2.5rem; 
+  }
+}
+ 
