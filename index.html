@@ -138,6 +138,79 @@
       .btn {padding:0.5rem 1rem; font-size:0.9rem;}
       section {padding:3rem 1rem;}
     }
+
+
+
+  /* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* Oculto en desktop */
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Mostrar en móvil */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 0 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.8rem 0;
+  }
+}
+
+  
   </style>
 </head>
 <body>
@@ -145,18 +218,25 @@
   <header>
     <nav>
       <h1>Omar Cruz  </h1>
-      <ul>
+     <!-- Botón menú hamburguesa -->
+      <button class="hamburger" id="hamburger">☰</button>
+      
+       <ul class="nav-links" id="nav-links">
+      
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#projects">Proyectos</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
+
     </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <!-- h2>Hola, soy <span>Omar</span></h2 -->
-    <p>Diseñador Web | HTML • CSS • JavaScript</p>
+    <h2>Diseñador Web </h2>
+    
+    <p>HTML • CSS • JavaScript</p>
     <a href="#projects" class="btn">Ver Proyectos</a>
   </section>
 
