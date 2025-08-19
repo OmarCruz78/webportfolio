@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +12,7 @@
       --color-secundario: #88B04B;         /* Verde claro */
       --color-texto: #FFFFFF;              /* Blanco */
       --color-texto-secundario: #E0E0E0;   /* Gris claro */
-      --overlay: rgba(0, 0, 0, 0.4);       /* Overlay para hero */
+      --overlay: rgba(0, 9, 0, 0.3);       /* Overlay para hero */
     }
 
     /* Reset & base */
@@ -38,11 +39,17 @@
       padding:1rem 2rem; 
       flex-wrap:wrap;
     }
-    nav h1 {font-size:2rem; color:rgb(var(--overlay));}
+    nav h1 {font-size:2rem; color:var(--color-texto);}
     nav ul {display:flex; gap:1.5rem; list-style:none;}
     nav a:hover {color:#0077ff;}
 
     /* Hero */
+    
+    
+    
+    
+    
+    
     
     .hero {
       height:100vh; 
@@ -53,7 +60,7 @@
       text-align:center; 
       background-image: url("https://i.ibb.co/Kc1q9Xpn/IMG-20250813-175111.jpg");
       W-size: cover;
-      background-position: center;
+      background-position: right center;
       color:#E0E0E0; 
       padding:2rem;
     }
@@ -76,6 +83,47 @@
       transition:0.3s;
     }
     .btn:hover {background:#ffeb3b; color:#333;}
+
+
+
+/* CSS */
+
+.hero {
+  position: relative; /* Esencial para que el pseudo-elemento ::after se posicione correctamente */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("https://i.ibb.co/Kc1q9Xpn/IMG-20250813-175111.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #E0E0E0;
+  padding: 2rem;
+  z-index: 1; /* Asegura que el hero esté en la parte superior */
+}
+
+/* El pseudo-elemento para el overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay); /* Aquí aplicas la variable */
+  z-index: -1; /* Lo pones detrás del contenido (texto) */
+}
+
+/* Asegúrate de que el contenido del hero esté por encima del overlay */
+.hero h2, .hero p, .hero a {
+  position: relative;
+  z-index: 1;
+}
+
+
+
 
     /* Secciones */
     
@@ -143,22 +191,25 @@
 
 
 
-  /* --- NAVBAR --- */
+  /* --- NAVBAR --- 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.5);
+  
   color: #fff;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-}
+}*/
 
-h1
+h1{
+    
+    
+}
 
 .nav-links {
   list-style: none;
@@ -184,16 +235,26 @@ h1
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-.navbar{
-  display:flex; 
-      justify-content:space-between;
-}
-  h1{display: inline;
-     margin-top: 3vh;
 
+
+
+
+.navbar{
+  display: grid;
+  grid-template-columns: auto auto ;
+  align-items: right;
+ 
   }
+
+.logo{
+{
+ /* grid-column: 1 / span 3;*/
+}
+    
+}
+
   .hamburger {
-    display: inline; /* Mostrar en móvil */
+   display: inline-grid; /* Mostrar en móvil */
   }
 
   .nav-links {
@@ -203,7 +264,7 @@ h1
     position: absolute;
     top: 60px;
     right: 0;
-    width: 45vw;
+    width: 200px;
     padding: 1rem;
     border-radius: 0 0 0 10px;
   }
@@ -215,7 +276,11 @@ h1
   .nav-links a {
     padding: 0.8rem 0;
   }
-}
+}    
+    
+  
+
+
 
   
   </style>
@@ -224,7 +289,7 @@ h1
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <h1>Omar Cruz  </h1>
+      <h1 class="logo">Omar Cruz  </h1>
      <!-- Botón menú hamburguesa -->
       <button class="hamburger" id="hamburger">☰</button>
       
@@ -384,5 +449,4 @@ hamburger.addEventListener("click", () => {
 
 </body>
 </html>    
-
 
