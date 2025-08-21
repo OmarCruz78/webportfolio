@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,14 +40,13 @@
       padding:1rem 2rem; 
       flex-wrap:wrap;
     }
-    nav h1 {font-size:2rem; color:var(--color-texto);}
+    nav h1 {font-size:2rem; color:var(--color-texto);
+    font-family: serif;
+    }
     nav ul {display:flex; gap:1.5rem; list-style:none;}
     nav a:hover {color:#0077ff;}
 
     /* Hero */
-    
-    
-    
     
     
     
@@ -69,6 +69,7 @@
       margin-bottom:1rem;
       color: var(--color-texto);
       text-shadow: 2px 2px 5px rgba(0,0,0,.6);
+      font-family: serif;
     }
     .hero span {color:#E0E0E0;}
     .hero p { 
@@ -98,7 +99,7 @@
   text-align: center;
   background-image: url("https://i.ibb.co/Kc1q9Xpn/IMG-20250813-175111.jpg");
   background-size: cover;
-  background-position: right center;
+  background-position: center;
   color: #E0E0E0;
   padding: 2rem;
   z-index: 1; /* Asegura que el hero esté en la parte superior */
@@ -183,8 +184,8 @@
     @media(max-width:480px){
       nav {flex-direction:column;}
       nav h1 {margin-bottom:0.5rem;}
-      .hero h2 {font-size:1.6rem;}
-      .hero p {font-size: 1.5rem;}
+      .hero h2 {font-size:1.9rem;}
+      .hero p {font-size: 1.2rem;}
       .btn {padding:0.5rem 1rem; font-size:0.9rem;}
       section {padding:3rem 1rem;}
     }
@@ -235,8 +236,6 @@ h1{
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-
-
 
 
 .navbar{
@@ -291,7 +290,7 @@ h1{
     <nav class="navbar">
       <h1 class="logo">Omar Cruz  </h1>
      <!-- Botón menú hamburguesa -->
-      <button class="hamburger" id="hamburger">☰</button>
+    <button class="hamburger" id="hamburger">☰</button>  
       
        <ul class="nav-links" id="nav-links">
       
@@ -330,19 +329,25 @@ h1{
 
 <div class="projects-grid">
   <div class="project-card">
-    <img src="https://i.ibb.co/ZpvmRQRR/IMG-20250817-172958.jpg" alt="Drawing a Cat">
+  
+  
+  <img src="https://i.ibb.co/RTMkSLMJ/Screenshot-2025-08-20-15-36-36-875-com-brave-browser-edit.jpg" alt="Screenshot-2025-08-20-15-36-36-875-com-brave-browser-edit" border="0">
+    
     <div class="content">
-      <h3>Drawing a Cat</h3>
-      <p>Dibujo de un gato con HTML y CSS.</p>
+      <h3>Galeria fotografica</h3>
+      <p>Galería de fotos con lightbox en JS.</p>
       <div class="links">
-        <a href="https://github.com/OmarCruz78/drawing-a-cat" target="_blank">GitHub</a>
-        <a href="https://OmarCruz78.github.io/drawing-a-cat/" target="_blank">Demo</a>
+        <a href="https://github.com/OmarCruz78/photogallery" target="_blank">GitHub</a>
+        <a href="https://OmarCruz78.github.io/photogallery/" target="_blank">Demo</a>
       </div>
+  
+ 
+    
     </div>
   </div>
 
   <div class="project-card">
-    <img src="proyecto2.png" alt="Piano App">
+   <img src="https://i.ibb.co/QvHcVL23/Screenshot-2025-08-19-03-03-29-312-com-brave-browser-edit.jpg" alt="Screenshot-2025-08-19-03-03-29-312-com-brave-browser-edit" border="0">
     <div class="content">
       <h3>Piano</h3>
       <p>Piano interactivo hecho en JavaScript.</p>
@@ -354,7 +359,7 @@ h1{
   </div>
 
   <div class="project-card">
-    <img src="proyecto3.png" alt="Web Portfolio">
+    <img src="https://i.ibb.co/tMb1L11F/Screenshot-2025-08-19-03-06-17-540-com-brave-browser-edit.jpg" alt="Screenshot-2025-08-19-03-06-17-540-com-brave-browser-edit" border="0">
     <div class="content">
       <h3>Web Portfolio</h3>
       <p>Mi portafolio personal con HTML, CSS y JS.</p>
@@ -365,16 +370,7 @@ h1{
     </div>
   </div>
 
-  <div class="project-card">
-    <img src="proyecto4.png" alt="Photo Gallery">
-    <div class="content">
-      <h3>Photo Gallery</h3>
-      <p>Galería de fotos con lightbox en JS.</p>
-      <div class="links">
-        <a href="https://github.com/OmarCruz78/photogallery" target="_blank">GitHub</a>
-        <a href="https://OmarCruz78.github.io/photogallery/" target="_blank">Demo</a>
-      </div>
-    </div>
+  
   </div>
 
   <div class="project-card">
