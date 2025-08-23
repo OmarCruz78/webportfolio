@@ -1,109 +1,268 @@
 
-:root{
-  --bg-color1: #f8f8f8;
-  --bg-color2: #000008;
+    :root {
+      --color-primario-rgb: 74, 124, 89;   /* Verde naturaleza en RGB */
+      --color-secundario: #88B04B;         /* Verde claro */
+      --color-texto: #FFFFFF;              /* Blanco */
+      --color-texto-secundario: #E0E0E0;   /* Gris claro */
+      --overlay: rgba(0, 9, 0, 0.3);       /* Overlay para hero */
+    }
+
+    /* Reset & base */
+
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Segoe UI', sans-serif; color:#333; background:#f9f9f9;}
+    a {text-decoration:none; color:inherit;}
+
+    /* Navbar */
+    
+    header {
+      position: fixed; 
+      top:0; left:0; 
+      width:100%; 
+      background-color: rgba(var(--color-primario-rgb), 0); /* transparente al inicio */
+      box-shadow:0 2px 10px rgba(0,0,0,0.1); 
+      z-index:1000;
+      transition: background-color .3s linear;
+    }
+    
+    nav {
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center; 
+      padding:1rem 2rem; 
+      flex-wrap:wrap;
+    }
+    nav h1 {font-size:2rem; color:var(--color-texto);
+    font-family: serif;
+    }
+    nav ul {display:flex; gap:1.5rem; list-style:none;}
+    nav a:hover {color:#0077ff;}
+
+    /* Hero */
+      
+    .hero {
+      background-position: right center;
+    }
+
+      .hero {
+  position: relative; /* Esencial para que el pseudo-elemento ::after se posicione correctamente */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  W-size: cover;
+  background-image: url("https://i.ibb.co/Kc1q9Xpn/IMG-20250813-175111.jpg");
+  background-size: cover;
+  background-position: right center;
+  color: #E0E0E0;
+  padding: 2rem;
+  z-index: 1; /* Asegura que el hero esté en la parte superior */
 }
 
-*{
-padding:0;
-margin:0;
-}
- 
-body{ 
-  background-color: var(--bg-color1);
-  color: var(--bg-color2);
-}
-
-#navbar{
-    position: sticky;
-    top:0;
-    height:10vh;
-    display: flex;
-    width: 100vw;
-    flex-direction: row-reverse; 
+/* El pseudo-elemento para el overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay); /* Aquí aplicas la variable */
+  z-index: -1; /* Lo pones detrás del contenido (texto) */
 }
 
-nav li{
-    display:inline-block;
-    font-size:2rem;
-    margin: 1rem 2rem;
-    text-align: right;
+/* Asegúrate de que el contenido del hero esté por encima del overlay */
+.hero h2, .hero p, .hero a {
+  position: relative;
+  z-index: 1;
 }
 
-li a{
-    text-decoration: none;
-    margin: 2rem auto;
-}
 
-header{
 
-    position:absolute; 
-    top: 65vh;
-    left:100px
-}
+    .hero h2 {
+      font-size:1.3 rem; 
+      margin-bottom:1rem;
+      color: var(--color-texto);
+      text-shadow: 2px 2px 5px rgba(0,0,0,.6);
+      font-family: serif;
+    }
+    .hero span {color:#E0E0E0;}
+    .hero p { 
+      color: var(--color-texto); 
+      font-size:1.5rem;
+      margin-bottom:1.5rem;}
+    .btn {
+      background:#fff; 
+      color: var(--color-secundario); 
+      padding:0.7rem 1.5rem; 
+      border-radius:30px; 
+      transition:0.3s;
+    }
+    .btn:hover {background:#ffeb3b; color:#333;}
+
+
+
+/* CSS */
+
+
+
+
+
+    /* Secciones */
+    
+    section {padding:5rem 2rem; max-width:1100px; margin:auto;}
+    section h2 {text-align:center; margin-bottom:2rem; font-size:2rem; color:rgb(var(--color-primario-rgb));}
+
+    /* Sobre mí */
+    
+    .about p {text-align:center; max-width:700px; margin:auto; margin-bottom:2rem;}
+    .skills {display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;}
+    .skill {background:#fff; padding:1rem 2rem; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+
+    /* Proyectos */
+    
+    .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem;}
+    .project-card {background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s;}
+    .project-card:hover {transform:translateY(-5px);}
+    .project-card img {width:100%; height:200px; object-fit:cover;}
+    .project-card .content {padding:1rem;}
+    .project-card h3 {margin-bottom:0.5rem; color:#0077ff;}
+    .links a {margin-right:1rem; color:#0077ff; font-weight:bold;}
+    .links a:hover {color:#ff5722;}
+
+    /* Contacto */
+    
+    .contact form {display:flex; flex-direction:column; gap:1rem; max-width:500px; margin:auto;}
+    .contact input, .contact textarea {padding:0.8rem; border:1px solid #ccc; border-radius:8px; width:100%;}
+    .contact textarea {resize:vertical; min-height:120px;}
+    .contact button {background:rgb(var(--color-primario-rgb)); color:#fff; padding:0.8rem; border:none; border-radius:30px; cursor:pointer; transition:0.3s;}
+    .contact button:hover {background:#ff5722;}
+
+    /* Footer */
+    
+    footer {text-align:center;
+     background: rgb(var(--color-primario-rgb));
+     color: #fff;
+      margin-top:1rem;
+     height: auto ; 
+
+            padding: 10px;
+           
+           }
+
+    /* Responsive */
+    
+    
+    @media(max-width:900px){
+      nav ul {flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem;}
+    }
+    @media(max-width:768px){
+      .hero h2 {font-size:2rem;}
+      .hero p {font-size:1.5rem;}
+      .skills { display: flex;
+      flex-direction:column ;
+       }
+    }
+    @media(max-width:480px){
+      nav {flex-direction:column;}
+      nav h1 {margin-bottom:0.5rem;}
+      .hero h2 {font-size:1.9rem;}
+      .hero p {font-size: 1.2rem;}
+      .btn {padding:0.5rem 1rem; font-size:0.9rem;}
+      section {padding:3rem 1rem;}
+    }
+
+
+
+  /* --- NAVBAR --- 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}*/
 
 h1{
-   
-  font-size: 5rem; 
+    
+    
 }
 
-.title{
-    font-size: 2.5rem;
-    font-style: italic;
-
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
-section{
-    padding: 2rem;
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
-h2{
-    font-size: 3rem; 
-}
-#welcome-section{
-    height:80vh;
-    background: linear-gradient(90deg, var(--bg-color2), var(--bg-color1));
-    padding:1rem 2rem;
-    color: var(--bg-color1);
-}
-
-#projects{
-    height:auto;
+/* Botón hamburguesa */
+.hamburger {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* Oculto en desktop */
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-    background-color: #fff9f9;
-    padding: 5px;
-  }
+/* --- Responsive --- */
+@media (max-width: 768px) {
 
-.project-grid{
-    height: 40vh;
-    width:100%;
-    border: 3px solid black;
-    margin: 1rem auto;
-    border-radius: 15px;
-}
 
-footer{
-    height: 10vh;
-    background-color: #f9f9f9;
-    border: 2px solid black;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-
-.container{
-    display:block;
-}
-
-   h1{
-font-size: 2.5rem; 
-  }
-}
+.navbar{
+  display: grid;
+  grid-template-columns: auto auto ;
+  align-items: right;
  
+  }
+
+.logo{
+{
+ /* grid-column: 1 / span 3;*/
+}
+    
+}
+
+  .hamburger {
+   display: inline-grid; /* Mostrar en móvil */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 0 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.8rem 0;
+  }
+}    
+    
+  
+
+
+
+  
