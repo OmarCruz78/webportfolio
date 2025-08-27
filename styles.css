@@ -1,3 +1,4 @@
+
 :root {
       --color-primario-rgb: 74, 124, 89;   /* Verde naturaleza en RGB */
       --color-secundario: #88B04B;         /* Verde claro */
@@ -37,7 +38,6 @@
     nav ul {display:flex; gap:1.5rem; list-style:none;}
     nav a:hover {color:#0077ff;}
 
-
       .nav-links {
         list-style: none;
         display: flex;
@@ -63,28 +63,27 @@
 
     /* Hero */
       
-    .hero {
-      background-position: right center;
-    }
-
       .hero {
-  position: relative; /* Esencial para que el pseudo-elemento ::after se posicione correctamente */
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  W-size: cover;
-  background-image: url("https://i.ibb.co/Kc1q9Xpn/IMG-20250813-175111.jpg");
-  background-size: cover;
-  background-position: right center;
-  color: #E0E0E0;
-  padding: 2rem;
-  z-index: 1; /* Asegura que el hero esté en la parte superior */
-}
+        position: relative; /* Esencial para que el pseudo-elemento ::after se posicione correctamente */
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+         background-image: url("https://i.ibb.co/Kc1q9Xpn/IMG-20250813-175111.jpg");
+        background-size: cover;
+        background-position: right center;
+        color: #E0E0E0;
+        padding: 2rem;
+        z-index: 1; /* Asegura que el hero esté en la parte superior */
+
+        max-width: 100% !important; /* Ignora el max-width global */
+
+      }
 
 /* El pseudo-elemento para el overlay */
+
 .hero::after {
   content: "";
   position: absolute;
@@ -97,11 +96,13 @@
 }
 
 /* Asegúrate de que el contenido del hero esté por encima del overlay */
+
 .hero h2, .hero p, .hero a {
   position: relative;
   z-index: 1;
 }
-/* Imagen móvil */
+
+/* Imagen móvil 
     .hero::before {
       content: "";
       position: absolute;
@@ -112,17 +113,17 @@
       opacity: 1;
     }
 
-    /* Imagen laptop */
+    /* Imagen laptop
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: url("https://i.ibb.co/jv42w7Ns/veronica.jpg") no-repeat center center / cover;
+
       z-index: -3;
       transition: opacity 0.8s ease-in-out;
       opacity: 0;
     }
-
+*/
 
     .hero h2 {
       font-size:1.3 rem; 
@@ -145,9 +146,6 @@
     }
     .btn:hover {background:#ffeb3b; color:#333;}
 
-
-
-/* CSS */
 
     /* Secciones */
     
@@ -197,13 +195,23 @@
     @media(max-width:900px){
       nav ul {flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem;}
     }
+
     @media(max-width:768px){
-      .hero h2 {font-size:2rem;}
-      .hero p {font-size:1.5rem;}
+      .hero h2 {
+          font-size:2rem;}
+      .hero p {
+          font-size:1.5rem;}
       .skills { display: flex;
-      flex-direction:column ;
+          flex-direction:column ;
        }
+      .navbar{
+          display: grid;
+          grid-template-columns: auto auto ;
+          align-items: right;
+      }
     }
+
+
     @media(max-width:480px){
       nav {flex-direction:column;}
       nav h1 {margin-bottom:0.5rem;}
@@ -211,39 +219,8 @@
       .hero p {font-size: 1.2rem;}
       .btn {padding:0.5rem 1rem; font-size:0.9rem;}
       section {padding:3rem 1rem;}
-    }
 
-    @media(min-width:780px){
-
-
-.hero {
-  background-image: url("piedras.jpg");
-}
-
-        
-    }
-
-
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-
-
-.navbar{
-  display: grid;
-  grid-template-columns: auto auto ;
-  align-items: right;
- 
-  }
-
-.logo{
-{
- /* grid-column: 1 / span 3;*/
-}
-    
-}
-
-  .hamburger {
+        .hamburger {
    display: inline-grid; /* Mostrar en móvil */
   }
 
@@ -266,7 +243,20 @@
   .nav-links a {
     padding: 0.8rem 0;
   }
-}    
-    
+    }
 
+    @media(min-width:780px){
+.hero {
+background-image: url("https://i.ibb.co/jv42w7Ns/veronica.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw; /* sigue siendo pantalla completa */
+}
+
+        
+    }
+
+
+    
 
