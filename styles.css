@@ -47,6 +47,7 @@
       .hero {
   position: relative; /* Esencial para que el pseudo-elemento ::after se posicione correctamente */
   height: 100vh;
+          width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -275,5 +276,6 @@ h1{
 
 
   
+
 
 
