@@ -175,10 +175,9 @@
     }
 
     @media(min-width:780px){
-
-
-.hero {
+        .hero {
   background-image: url("piedras.jpg");
+            background-size: cover;
 }
 
         
@@ -276,4 +275,5 @@ h1{
 
 
   
+
 
